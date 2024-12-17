@@ -5,10 +5,14 @@ layout: single
 author_profile: true
 classes: wide
 header:
-  overlay_image: /assets/splash/cover.jpg
-  overlay_filter: 0.5
+  image: /assets/splash/cover.jpg
+  image_description: "Profile picture of Abhijeet Ghawade"
+  height: 400px
+  overlay_filter: rgba(0, 0, 0, 0.5)
+  actions:
+    - label: "View CV"
+      url: "/assets/cv.pdf"
 ---
-
 # Welcome! 👋
 
 I'm Abhijeet Ghawade, I have passion for artificial intelligence, deep learning, and solving complex data challenges. With a strong foundation in electrical engineering and research experience in reinforcement learning, I bring a unique blend of theoretical knowledge and practical expertise to the field of data science.

@@ -7,3 +7,9 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.page__hero-image {
+  height: 400px;
+  object-fit: cover;
+  object-position: center 30%; // Adjust this value to control which part of the vertical image is shown
+}
