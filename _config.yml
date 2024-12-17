@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Abhijeet Ghawade"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Analyst at SLB"
+  bio              : "Data Engineer 2 at SLB"
   location         : "Pune, India"
   email            :
   links:
@@ -118,7 +118,7 @@ author:
       url: "https://aginai.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://x.com/nowjeet"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
@@ -127,7 +127,7 @@ author:
       url: "https://github.com/abhijeetg12"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://www.instagram.com/_abhijeetg/"
 
 # Site Footer
 footer:
@@ -291,3 +291,16 @@ defaults:
       comments: # true
       share: true
       related: true
+
+logo: "/assets/splash/logo.jpeg" 
+masthead_title: "Abhijeet's Blog" 
+
+social_share: true
+social_share_options:
+  - twitter
+  - linkedin
+  - facebook
+
+search: true
+search_full_content: true
+search_provider: lunr

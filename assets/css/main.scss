@@ -13,3 +13,14 @@ search: false
   object-fit: cover;
   object-position: center 60%; // Adjust this value to control which part of the vertical image is shown
 }
+
+/* Better typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.8;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
