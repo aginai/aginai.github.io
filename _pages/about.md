@@ -1,26 +1,56 @@
 ---
 title: About Me
 permalink: /about/
-image : prof_pic.jpeg
+layout: single
+author_profile: true
+classes: wide
+header:
+  overlay_image: /assets/splash/cover.jpg
+  overlay_filter: 0.5
 ---
 
-<!-- # About Me
+# Welcome! 👋
 
-Hello, I'm [Your Name]. Welcome to my personal space on the internet.
+I'm Abhijeet Ghawade, I have passion for artificial intelligence, deep learning, and solving complex data challenges. With a strong foundation in electrical engineering and research experience in reinforcement learning, I bring a unique blend of theoretical knowledge and practical expertise to the field of data science.
 
+## Professional Journey 🚀
 
-## Contact
+Currently, I work as a **Data Engineer**, where I:
+- Lead data analysis initiatives to drive business insights
+- Develop and implement advanced analytical solutions
+- Collaborate with cross-functional teams to optimize data-driven decision making
 
-Feel free to reach out to me on [social media](#) or via email at [your@email.com]. -->
+## Academic Background 📚
 
-## About me 
-![prof_pic](/../assets/splash/cover.jpg)
-Hello! 
-thanks for visiting my personal website! 
-I am Abhijeet, working as a Data Analyst at SLB (Schlumberger) working primarily on Data Analysis. 
+- **Dual Degree (B.Tech + M.Tech) in Electrical Engineering**  
+  Indian Institute of Technology, Madras
+  - Research Focus: Option Discovery Methods for Reinforcement Learning
+  - Thesis Advisor: Dr. Balaram Ravindran
 
-Prior to joining SLB, I graduated from Indian Institute of Technology, Madras with a Bachelors and Masters in Electrical engineering. 
-I worked on my final semester project with professor Dr. Balaram Ravindran on option discovery methods for reinforcement learning.
-I spend a semester at the Carnegie Mellon University at the Advanced Agents Robotics Technology Lab in 2019-20 for an undergraduate internship.
-My areas of interest are Deep learning, Large Language Models and Reinforcement Learning.
+- **Research Exchange Student**  
+  Carnegie Mellon University (2019-20)
+  - Advanced Agents Robotics Technology Lab
+  - Focused on cutting-edge robotics and AI applications
 
+## Research Interests 🔬
+
+My research and professional interests lie at the intersection of:
+- Deep Learning
+- Large Language Models
+- Reinforcement Learning
+- Full Stack Development
+- Data Analytics
+- Machine Learning Applications
+
+## Let's Connect! 🤝
+
+I'm always interested in collaborating on interesting projects and discussing new ideas in AI and data science. Feel free to reach out to me through:
+
+- 📧 Email: [abhijeet.ghawade12@gmail.com](mailto:abhijeet.ghawade12@gmail.com)
+- 💼 LinkedIn: [Connect with me](https://www.linkedin.com/in/yourprofile)
+- 🌐 GitHub: [View my projects](https://github.com/abhijeetg12)
+- 🔗 Website: [aginai.github.io](https://aginai.github.io)
+
+---
+
+> "The goal is to turn data into information, and information into insight." - Carly Fiorina
