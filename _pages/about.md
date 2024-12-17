@@ -29,7 +29,7 @@ Currently, I work as a **Data Engineer**, where I:
 - **Dual Degree (B.Tech + M.Tech) in Electrical Engineering**  
   Indian Institute of Technology, Madras
   - Research Focus: Option Discovery Methods for Reinforcement Learning
-  - Thesis Advisor: Dr. Balaram Ravindran
+  - Thesis Advisor: Dr. Balaraman Ravindran
 
 - **Research Exchange Student**  
   Carnegie Mellon University (2019-20)
@@ -51,7 +51,6 @@ My research and professional interests lie at the intersection of:
 I'm always interested in collaborating on interesting projects and discussing new ideas in AI and data science. Feel free to reach out to me through:
 
 - 📧 Email: [abhijeet.ghawade12@gmail.com](mailto:abhijeet.ghawade12@gmail.com)
-- 💼 LinkedIn: [Connect with me](https://www.linkedin.com/in/yourprofile)
 - 🌐 GitHub: [View my projects](https://github.com/abhijeetg12)
 - 🔗 Website: [aginai.github.io](https://aginai.github.io)
 
