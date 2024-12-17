@@ -304,3 +304,10 @@ social_share_options:
 search: true
 search_full_content: true
 search_provider: lunr
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-DKSS0Q5KPN"
+    anonymize_ip: false 
