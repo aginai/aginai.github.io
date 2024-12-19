@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Abhijeet Ghawade"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/splash/logo.jpeg"
   bio              : "Data Engineer 2 at SLB"
   location         : "Pune, India"
   email            :
