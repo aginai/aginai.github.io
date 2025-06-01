@@ -15,11 +15,11 @@ header:
 ---
 # Welcome! 👋
 
-I'm Abhijeet Ghawade, I have passion for artificial intelligence, deep learning, and solving complex data challenges. With a strong foundation in electrical engineering and research experience in reinforcement learning, I bring a unique blend of theoretical knowledge and practical expertise to the field of data science.
+I'm Abhijeet Ghawade, a passionate machine learning engineer with a deep love for artificial intelligence, deep learning, and solving complex data challenges at scale. With 5+ years of experience building production-grade AI systems and a strong research foundation, I bring together cutting-edge ML technologies with real-world business impact.
 
 ## Professional Journey 🚀
 
-Currently, I work as a **Data Engineer**, where I:
+Currently, I work as a Senior Machine Learning Engineer at 73 Strings, where I'm developing LLM-powered data insight platforms. Previously at SLB, I:
 - Lead data analysis initiatives to drive business insights
 - Develop and implement advanced analytical solutions
 - Collaborate with cross-functional teams to optimize data-driven decision making
