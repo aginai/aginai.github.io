@@ -20,7 +20,7 @@ title                    : "Home"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Abhijeet Ghawade"
-description              : "Senior ML Engineer @ 73Strings "
+description              : "Sr. Data Scientist @ Target"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -36,7 +36,7 @@ comments:
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
-    # https://developers.facebook.com/docs/plugins/comments
+
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
@@ -52,7 +52,7 @@ comments:
     theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
   staticman:
     branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    endpoint             : # "  teatps://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
   siteKey                :
   secret                 :
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Abhijeet Ghawade"
   avatar           : "/assets/splash/logo.jpeg"
-  bio              : "Data Engineer 2 at SLB"
+  bio              : "Sr. Data Scientist at Target"
   location         : "Pune, India"
   email            :
   links:

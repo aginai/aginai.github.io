@@ -13,47 +13,33 @@ header:
     - label: "View CV"
       url: "/assets/cv.pdf"
 ---
-# Welcome! 👋
+# Hey there! 👋
 
-I'm Abhijeet Ghawade, a passionate machine learning engineer with a deep love for artificial intelligence, deep learning, and solving complex data challenges at scale. With 5+ years of experience building production-grade AI systems and a strong research foundation, I bring together cutting-edge ML technologies with real-world business impact.
+I'm Abhijeet, and I work as a Sr. Data Scientist at Target. I spend my days building ML systems and figuring out how to make data actually useful for people. 
 
-## Professional Journey 🚀
+## What I've Been Up To
 
-Currently, I work as a Senior Machine Learning Engineer at 73 Strings, where I'm developing LLM-powered data insight platforms. Previously at SLB, I:
-- Lead data analysis initiatives to drive business insights
-- Develop and implement advanced analytical solutions
-- Collaborate with cross-functional teams to optimize data-driven decision making
+Right now at Target, I'm working on some interesting problems around data insights, simulation models and prioritiazation systems. Before this, I was at 73 Strings building LLM-powered platforms, and before I was at SLB doing data engineering and analytics. Each place taught me something different about how data and ML work in the real world.
 
-## Academic Background 📚
+## Background
 
-- **Dual Degree (B.Tech + M.Tech) in Electrical Engineering**  
-  Indian Institute of Technology, Madras
-  - Research Focus: Option Discovery Methods for Reinforcement Learning
-  - Thesis Advisor: Dr. Balaraman Ravindran
+I did my undergrad and master's at IIT Madras in Electrical Engineering. My thesis was on reinforcement learning - specifically option discovery methods - which was basically trying to figure out how agents can learn to break down complex tasks. 
 
-- **Research Exchange Student**  
-  Carnegie Mellon University (2019-20)
-  - Advanced Agents Robotics Technology Lab
-  - Focused on cutting-edge robotics and AI applications
+## What I'm Into
 
-## Research Interests 🔬
+These days I'm interested in:
+- Making LLMs actually useful for real problems 
+- Reinforcement learning (still find it fascinating)
+- Building things end-to-end - from data pipelines to deployment
 
-My research and professional interests lie at the intersection of:
-- Deep Learning
-- Large Language Models
-- Reinforcement Learning
-- Full Stack Development
-- Data Analytics
-- Machine Learning Applications
+I also like tinkering with full-stack development. Being able to build a complete product yourself is pretty satisfying.
 
-## Let's Connect! 🤝
+## Get In Touch
 
-I'm always interested in collaborating on interesting projects and discussing new ideas in AI and data science. Feel free to reach out to me through:
+Always happy to chat about ML, data engineering, or anything tech-related. You can find me at:
 
-- 📧 Email: [abhijeet.ghawade12@gmail.com](mailto:abhijeet.ghawade12@gmail.com)
-- 🌐 GitHub: [View my projects](https://github.com/abhijeetg12)
-- 🔗 Website: [aginai.github.io](https://aginai.github.io)
+- 📧 [abhijeet.ghawade12@gmail.com](mailto:abhijeet.ghawade12@gmail.com)
+- 🐙 [GitHub](https://github.com/abhijeetg12) - where I actually push code
+- 🐦 [Twitter](https://x.com/nowjeet) - occasional thoughts
 
----
-
-> "The goal is to turn data into information, and information into insight." - Carly Fiorina
+If you're working on something interesting or just want to talk shop, feel free to reach out.

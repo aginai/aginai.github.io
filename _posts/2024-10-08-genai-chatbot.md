@@ -1,70 +1,73 @@
-# Building a RAG Search System with Azure AI and Streamlit
+# Building a Chatbot That Actually Knows Your Docs
 
-In this post, I'll walk you through how I built a Retrieval-Augmented Generation (RAG) search system using Azure AI services and Streamlit. This project combines the power of Azure Cognitive Search with Large Language Models to create an intelligent chatbot that can answer questions based on your own knowledge base.
+So I built this RAG (Retrieval-Augmented Generation) system using Azure and Streamlit. The goal was simple: make a chatbot that could answer questions about specific documents without hallucinating stuff.
 
-## What is RAG?
+You know how regular LLMs will just confidently make things up sometimes? RAG fixes that by making the model look up information first before answering. It's like the difference between answering from memory versus checking your notes first.
 
-Before diving into the implementation details, let's understand what RAG is. Retrieval-Augmented Generation is a technique that enhances Large Language Models by allowing them to access and use external knowledge. Instead of relying solely on the model's trained knowledge, RAG systems first retrieve relevant information from a curated knowledge base and then use that information to generate more accurate and contextual responses.
+## Why RAG?
 
-## System Architecture
+The problem with just throwing documents at an LLM is that they'll either hallucinate answers or tell you they don't know. With RAG, you:
+1. First search your documents for relevant info
+2. Then hand that info to the LLM
+3. The LLM generates an answer based on what it found
 
-The system consists of several key components:
+Way more reliable. And you can actually cite your sources.
 
-1. **Document Processing Pipeline**: Handles PDF documents by:
-   - Splitting them into pages
-   - Extracting text (including tables)
-   - Chunking content into manageable sections
-   - Uploading to Azure Blob Storage
+## How It Works
 
-2. **Azure Cognitive Search**: Indexes and stores the processed documents for efficient retrieval
+The system has three main pieces:
 
-3. **Streamlit Interface**: Provides a user-friendly chat interface with:
-   - Persona selection
-   - Conversation history
-   - Dynamic response generation
+**Document Processing**: Takes your PDFs, breaks them into chunks, extracts text (even from tables), and uploads everything to Azure. This part was trickier than I expected - PDFs are messy.
 
-## Key Implementation Features
+**Azure Cognitive Search**: Indexes everything so you can search through it fast. Azure's semantic search is actually pretty good for this.
 
-### Document Processing
+**Streamlit Frontend**: Just a clean chat interface. Nothing fancy, but it works well. Added persona selection so different user types could get different response styles.
 
-One of the most interesting aspects of this project is how it handles document processing. The system can process PDF documents intelligently:
+## The PDF Processing Headache
+
+PDFs are annoying to work with. Some use native text, some are scanned images, some have complex tables. I ended up with two approaches:
 
 ```python
 def get_document_text(filename):
     if localpdfparser:
+        # Simple approach: use PyPDF
         reader = PdfReader(filename)
         pages = reader.pages
         for page_num, p in enumerate(pages):
             page_text = p.extract_text()
             page_map.append((page_num, offset, page_text))
     else:
+        # Better approach: Azure Form Recognizer
+        # Handles tables and complex layouts way better
         form_recognizer_client = DocumentAnalysisClient(...)
-        # Use Azure Form Recognizer for advanced document analysis
 ```
 
-The system can even handle complex tables by converting them to HTML format:
+For tables, I convert them to HTML so they stay readable:
 
 ```python
 def table_to_html(table):
     table_html = "<table>"
-    rows = [sorted([cell for cell in table.cells if cell.row_index == i], 
-            key=lambda cell: cell.column_index) 
+    rows = [sorted([cell for cell in table.cells if cell.row_index == i],
+            key=lambda cell: cell.column_index)
             for i in range(table.row_count)]
-    # Process table structure...
+    # Build the HTML structure...
     return table_html
 ```
 
-### Smart Text Chunking
+## Text Chunking Strategy
 
-To optimize search performance, the system implements intelligent text chunking:
+One thing I learned: chunk size matters a lot. Too small and you lose context. Too big and your search gets less precise.
 
-1. Maintains context across chunks with overlapping sections
-2. Respects sentence boundaries
-3. Handles special cases like tables spanning multiple chunks
+I ended up with:
+- Overlapping chunks (so context isn't lost at boundaries)
+- Respect sentence boundaries (don't cut mid-sentence)
+- Special handling for tables that span multiple chunks
 
-### Azure Search Integration
+It's not perfect, but it works pretty well in practice.
 
-The search index is designed to support semantic search capabilities:
+## Setting Up Azure Search
+
+The search index setup is straightforward:
 
 ```python
 search_index = SearchIndex(
@@ -73,64 +76,65 @@ search_index = SearchIndex(
         SimpleField(name="id", type="Edm.String", key=True),
         SearchableField(name="content", type="Edm.String", analyzer_name="en.microsoft"),
         SimpleField(name="category", type="Edm.String", filterable=True, facetable=True),
-        # Additional fields...
+        # More fields...
     ],
     semantic_settings=SemanticSettings(...)
 )
 ```
 
-## The User Experience
+Semantic search makes a huge difference here. It understands that "machine learning" and "ML" are related, which keyword search wouldn't catch.
 
-The Streamlit interface provides a clean, chat-like experience where users can:
+## The Interface
 
-1. Select different personas (e.g., TLM Manager, PSD Manager)
-2. Ask questions naturally
-3. See conversation history
-4. Get responses with source references
+Kept the UI simple with Streamlit. You can:
+- Pick a persona (different roles get different response styles)
+- Ask questions in plain English
+- See your chat history
+- Get answers with source citations
 
-## Deployment and Configuration
+The persona thing was interesting. Turns out engineers and managers ask questions differently and want different levels of detail.
 
-The system is designed to be easily deployable with minimal configuration:
+## Running It
 
-1. Configure Azure services in `secrets.toml`:
-   ```toml
-   [default]
-   searchservice = "your-search-service-name"
-   searchkey = "your-search-service-admin-api-key"
-   index = "your-index-name"
-   ```
+Setup is pretty minimal:
 
-2. Run with a simple command:
-   ```bash
-   streamlit run app.py
-   ```
+```toml
+# secrets.toml
+[default]
+searchservice = "your-search-service"
+searchkey = "your-api-key"
+index = "your-index-name"
+```
 
-## Technical Considerations
+Then just:
+```bash
+streamlit run app.py
+```
 
-When building this system, I had to address several technical challenges:
+## Things I'd Do Differently
 
-1. **Document Processing**: Handling various PDF formats and table structures
-2. **Chunking Strategy**: Balancing chunk size with context preservation
-3. **Search Relevance**: Tuning search parameters for optimal results
-4. **Response Generation**: Creating contextual prompts for the LLM
+A few pain points I hit:
 
-## Future Improvements
+**PDF handling**: Should've just used Azure Form Recognizer from the start. The PyPDF fallback works but misses stuff.
 
-Some potential enhancements I'm considering:
+**Chunk size**: Took way too long to tune this. Probably should've just started with 1000 tokens with 200 token overlap.
 
-1. Multi-language support
-2. Advanced document preprocessing options
-3. Custom embeddings for improved search relevance
-4. Real-time document updates
+**Search tuning**: The default search settings were actually fine. Spent too much time over-optimizing.
 
-## Conclusion
+**Prompt engineering**: This mattered more than I expected. Getting the LLM to cite sources properly took some iteration.
 
-This RAG search system demonstrates how to combine Azure AI services with modern UI frameworks to create a powerful, user-friendly search experience. The modular architecture makes it easy to extend and customize for different use cases.
+## What's Next
 
-Feel free to check out the [GitHub repository](https://github.com/your-username/rag-search-azure-ai) for the complete code and documentation.
+If I revisit this, I'd add:
+- Support for more document types (Word docs, Excel, etc.)
+- Better conversation context handling (right now it's pretty basic)
+- Custom embeddings instead of relying on Azure's default ones
+- Some way to update docs in real-time without reprocessing everything
 
-## Resources
+## Final Thoughts
 
-- [Azure Cognitive Search Documentation](https://docs.microsoft.com/en-us/azure/search/)
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Python PDF Processing](https://pypdf.readthedocs.io/)
+This was a fun project. RAG isn't magic - it's just good search plus LLMs. But when done right, it's way more useful than either alone.
+
+The key insight: don't over-engineer it. Start simple, see what breaks, then fix that. Most of the value comes from just getting it working, not from fancy optimizations.
+
+If you want to build something similar, Azure makes it pretty easy. The hard part isn't the tech - it's figuring out how to chunk and index your docs well.
